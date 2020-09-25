@@ -1,0 +1,17 @@
+.address-bar {
+  background: #757679;
+  height: 35px;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    letter-spacing: 3px;
+    font-size: .85rem;
+    text-transform: uppercase;
+    opacity: .9;
+    .location {
+      margin-right: 1rem;
+    }
+  }
+}

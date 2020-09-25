@@ -1,0 +1,19 @@
+.food-carousel {
+  position: relative;
+  .carousel-text {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 2rem;
+    padding: 1rem;
+    z-index: 5;
+    color: #957f64;
+    background: #fdfdfd;
+    font-family: 'Tangerine';
+    border: 2px solid lightgray;
+  }
+  img {
+    height: calc(100vh - 220px);
+    object-fit: cover;
+  }
+}
