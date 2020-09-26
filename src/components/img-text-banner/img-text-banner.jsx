@@ -1,17 +1,17 @@
 import React from 'react'
 import './img-text-banner.scss'
 import Button from '../button/button'
+import Diner from '../../imgs/dining-hall.jpg'
 
-const ImgTextBanner = () => {
+const ImgTextBanner = ({ title, body, img, btnText }) => {
   return (
     <div className="img-text-banner">
       <div className="side-a">
-        <h2>About</h2>
-        <p>Lilia brings the best of Italy to Williamsburg where wood-fired seafood, handcrafted pastas, classic Italian cocktails, and warm hospitality come together to create a casual dining experience. </p>
-        <Button />
+        <h2>{ title }</h2>
+        <p>{ body }</p>
+        <Button btnText={btnText}/>
       </div>
-      <div className="side-b">
-
+      <div className="side-b" style={{ backgroundImage: `url(${Diner})`}}>
       </div>
     </div>
   )

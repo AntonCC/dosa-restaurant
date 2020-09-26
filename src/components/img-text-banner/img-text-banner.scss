@@ -13,15 +13,28 @@
       font-family: Tangerine;
       font-size: 3rem;
       color: #fff;
+      margin-bottom: 2rem;
+      position: relative;
+      &::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+      }
     }
     p {
       max-width: 500px;
       text-align: center;
       line-height: 1.5;
       color: #fff;
+      margin-bottom: 2rem;
     }
   }
   .side-b {
-    background: url('../../imgs/dining-hall.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: bottom;
   }
 }
