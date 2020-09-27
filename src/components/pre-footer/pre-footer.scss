@@ -1,14 +1,45 @@
 .pre-footer {
   height: 200px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  .side-a {
-    h2 {
-      font-size: 2rem;
-      font-family: 'Tangerine', cursive;
+  padding: 2rem 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    .side-a {
+      color: #fff;
+      h2 {
+        font-size: 2rem;
+        font-family: 'Tangerine', cursive;
+        position: relative;
+        margin-bottom: 2rem;
+        &::after {
+          content: '';
+          width: 20px;
+          height: 2px;
+          background: #fff;
+          position: absolute;
+          bottom: -45%;
+          left: 50%;
+        }
+      }
+    }
+    .side-b {
+      color: #fff;
+      h2 {
+        font-size: 2rem;
+        font-family: 'Tangerine', cursive;
+        position: relative;
+        margin-bottom: 2rem;
+        &::after {
+          content: '';
+          width: 20px;
+          height: 2px;
+          background: #fff;
+          position: absolute;
+          bottom: -45%;
+          left: 50%;
+        }
+      }
     }
   }
 }
