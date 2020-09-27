@@ -1,17 +1,16 @@
 import React from 'react'
 import './img-text-banner.scss'
 import Button from '../button/button'
-import Diner from '../../imgs/dining-hall.jpg'
 
-const ImgTextBanner = ({ title, body, img, btnText }) => {
+const ImgTextBanner = ({ title, body, img, btnText, btnClass, bgColor, switchSide }) => {
   return (
-    <div className="img-text-banner">
-      <div className="side-a">
+    <div className={`img-text-banner ${switchSide ? 'switch-side' : ''}`}>
+      <div className="side-a" style={ bgColor ? {background: bgColor} : {}}>
         <h2>{ title }</h2>
         <p>{ body }</p>
-        <Button btnText={btnText}/>
+        <Button btnText={btnText} btnClass={btnClass}/>
       </div>
-      <div className="side-b" style={{ backgroundImage: `url(${Diner})`}}>
+      <div className="side-b" style={{ backgroundImage: `url(${img})`}}>
       </div>
     </div>
   )

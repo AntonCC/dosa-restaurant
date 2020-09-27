@@ -2,8 +2,24 @@
   outline: none;
   border: none;
   background: none;
-  border: 2px solid #fff;
   padding: .5rem 2rem;
   font-size: 1rem;
-  color: #fff;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+  &.white-outline {
+    border: 2px solid #fff;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: #111;
+    }
+  }
+  &.black-outline {
+    border: 2px solid #111;
+    color: #111;
+    &:hover {
+      background: #111;
+      color: #fff;
+    }
+  }
 }

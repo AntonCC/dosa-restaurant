@@ -1,0 +1,14 @@
+.pre-footer {
+  height: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .side-a {
+    h2 {
+      font-size: 2rem;
+      font-family: 'Tangerine', cursive;
+    }
+  }
+}
