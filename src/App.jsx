@@ -4,9 +4,13 @@ import { Switch, Route } from 'react-router-dom'
 import AddressBar from './components/address-bar/address-bar'
 import Navbar from './components/navbar/navbar'
 import Home from './pages/home/home'
+import About from './pages/about/about'
+import PreFooter from './components/pre-footer/pre-footer'
+import Footer from './components/footer/footer'
 
 const routes = [
-  {path: '/', name: 'Home', component: Home}
+  {path: '/', name: 'Home', component: Home},
+  {path: '/about', name: 'About', component: About}
 ]
 
 const App = () =>  {
@@ -21,6 +25,8 @@ const App = () =>  {
           ))
         }
       </Switch>
+      <PreFooter />
+      <Footer />
     </div>
   );
 }

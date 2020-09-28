@@ -6,9 +6,11 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="container">
-        <div className="logo">Dosa</div>
+        <Link to='/'>
+          <div className="logo">Dosa</div>
+        </Link>
         <ul>
-          <li><Link to='/'>About</Link></li>
+          <li><Link to='/about'>About</Link></li>
           <li><Link to='/'>Menu</Link></li>
           <li><Link to='/'>Cafe</Link></li>
           <li><Link to='/'>Hours & Location</Link></li>

@@ -9,6 +9,16 @@
       font-size: 3rem;
       font-family: 'Tangerine';
       margin-bottom: 2rem;
+      position: relative;
+      &::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: #111;
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+      }
     }
     .body {
       max-width: 700px;

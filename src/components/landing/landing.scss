@@ -1,0 +1,6 @@
+.landing {
+  height: calc(100vh - 220px);
+  &.small {
+    height: 40vh;
+  }
+}
