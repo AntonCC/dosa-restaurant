@@ -1,0 +1,41 @@
+.menu-selector {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    h2 {
+      font-family: 'Tangerine', cursive;
+      font-size: 3rem;
+      text-align: center;
+      position: relative;
+      padding-bottom: 1rem;
+      line-height: .75;
+      &::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: #111;
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+      }
+    }
+    ul {
+      display: flex;
+      li {
+        font-size: .8rem;
+        text-transform: uppercase;
+        padding-top: 1rem;
+        cursor: pointer;
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+        &.active {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
