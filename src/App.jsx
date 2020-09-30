@@ -6,13 +6,15 @@ import Navbar from './components/navbar/navbar'
 import Home from './pages/home/home'
 import About from './pages/about/about'
 import Menu from './pages/menu/menu'
+import Location from './pages/location/location'
 import PreFooter from './components/pre-footer/pre-footer'
 import Footer from './components/footer/footer'
 
 const routes = [
   {path: '/', name: 'Home', component: Home},
   {path: '/about', name: 'About', component: About},
-  {path: '/menu', name: ' Menu', component: Menu}
+  {path: '/menu', name: ' Menu', component: Menu},
+  {path: '/location', name: 'location', component: Location}
 ]
 
 const App = () =>  {

@@ -8,6 +8,7 @@ export const imgBannerInfo = [
     img: Dining,
     btnText: 'About Us',
     btnClass: 'white-outline',
+    btnLink: '/about',
     bgColor: '#757679'
   },
   {
@@ -16,6 +17,7 @@ export const imgBannerInfo = [
     img: Dish,
     btnText: 'View Menu',
     bgColor: '#727b4e',
+    btnLink: '/menu',
     btnClass: 'white-outline',
     switchSide: true
   },
