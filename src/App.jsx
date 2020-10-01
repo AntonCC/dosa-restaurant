@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom'
 import AddressBar from './components/address-bar/address-bar'
 import Navbar from './components/navbar/navbar'
+import Sidebar from './components/sidebar/sidebar'
 import Home from './pages/home/home'
 import About from './pages/about/about'
 import Menu from './pages/menu/menu'
@@ -18,10 +19,17 @@ const routes = [
 ]
 
 const App = () =>  {
+  const [openSidebar, setOpenSidebar] = useState(false)
+
+  const handleSidebar = () => {
+    setOpenSidebar(!openSidebar)
+  }
+
   return (
     <div className="App">
       <AddressBar />
-      <Navbar />
+      <Navbar handleSidebar={handleSidebar} />
+      <Sidebar openSidebar={openSidebar} handleSidebar={handleSidebar}/>
       <Switch>
         {
           routes.map(({ path, name, component}) => (
