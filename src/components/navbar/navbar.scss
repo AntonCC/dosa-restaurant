@@ -1,5 +1,16 @@
 .navbar {
-  // padding: 1rem 0;
+  width: 100%;
+  background: #fefefe;
+  box-shadow: 2px 0 2px rgba(0,0,0,.3);
+  &.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    visibility: hidden;
+    &.show {
+      visibility: visible;
+    }
+  }
   .container {
     display: flex;
     position: relative;
@@ -7,7 +18,7 @@
     a {
       z-index: 5;
       .logo {
-        font-size: 3rem;
+        font-size: 3.5rem;
         // margin-bottom: 1rem;
         font-family: 'Tangerine';
         justify-self: start;

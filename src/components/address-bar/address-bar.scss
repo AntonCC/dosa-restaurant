@@ -15,3 +15,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 750px) {
+  .address-bar {
+    .container {
+      font-size: .6rem;
+    }
+  }
+}

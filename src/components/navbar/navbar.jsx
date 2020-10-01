@@ -2,9 +2,11 @@ import React from 'react'
 import './navbar.scss'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({ handleSidebar }) => {
+const Navbar = ({ handleSidebar, showFixedNav, fixed }, ref) => {
+
+
   return (
-    <div className="navbar">
+    <div ref={ref} className={`navbar ${fixed ? 'fixed' : ''} ${showFixedNav ? 'show' : ''}`}>
       <div className="container">
         <Link to='/'>
           <div className="logo">Dosa</div>
@@ -24,4 +26,6 @@ const Navbar = ({ handleSidebar }) => {
     </div>
   )
 }
-export default Navbar
+
+const fowardedNav = React.forwardRef(Navbar)
+export default fowardedNav

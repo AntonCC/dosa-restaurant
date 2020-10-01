@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom'
 import AddressBar from './components/address-bar/address-bar'
+import NavPlaceholder from './components/nav-placeholder/nav-placeholder'
 import Navbar from './components/navbar/navbar'
 import Sidebar from './components/sidebar/sidebar'
 import Home from './pages/home/home'
@@ -20,15 +21,35 @@ const routes = [
 
 const App = () =>  {
   const [openSidebar, setOpenSidebar] = useState(false)
+  const [showFixedNav, setFixedNav] = useState(false)
+  let navRef = useRef(null)
 
   const handleSidebar = () => {
     setOpenSidebar(!openSidebar)
   }
 
+  const handleScroll = () => {
+    let navBottom = navRef.current.getBoundingClientRect().bottom
+    if(navBottom < 0) {
+      setFixedNav(true)
+    } else {
+      setFixedNav(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div className="App">
       <AddressBar />
-      <Navbar handleSidebar={handleSidebar} />
+      <Navbar ref={navRef} key='1' handleSidebar={handleSidebar} />
+      <Navbar handleSidebar={handleSidebar} showFixedNav={showFixedNav} fixed />
       <Sidebar openSidebar={openSidebar} handleSidebar={handleSidebar}/>
       <Switch>
         {
