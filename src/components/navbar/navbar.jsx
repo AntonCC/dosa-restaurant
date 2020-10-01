@@ -14,6 +14,11 @@ const Navbar = () => {
           <li><Link to='/menu'>Menu</Link></li>
           <li><Link to='/location'>Location</Link></li>
         </ul>
+        <div className="hamburger">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
       </div>
     </div>
   )
