@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom'
+import ScrollTop from './components/scroll-top/scroll-top'
 import AddressBar from './components/address-bar/address-bar'
-import NavPlaceholder from './components/nav-placeholder/nav-placeholder'
 import Navbar from './components/navbar/navbar'
 import Sidebar from './components/sidebar/sidebar'
 import Home from './pages/home/home'
@@ -47,6 +47,7 @@ const App = () =>  {
 
   return (
     <div className="App">
+      <ScrollTop />
       <AddressBar />
       <Navbar ref={navRef} key='1' handleSidebar={handleSidebar} />
       <Navbar handleSidebar={handleSidebar} showFixedNav={showFixedNav} fixed />
