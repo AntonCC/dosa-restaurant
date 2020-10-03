@@ -22,6 +22,7 @@ const routes = [
 const App = () =>  {
   const [openSidebar, setOpenSidebar] = useState(false)
   const [showFixedNav, setFixedNav] = useState(false)
+  const [hideNav, setHideNav] = useState(false)
   let navRef = useRef(null)
 
   const handleSidebar = () => {
@@ -49,8 +50,8 @@ const App = () =>  {
     <div className="App">
       <ScrollTop />
       <AddressBar />
-      <Navbar ref={navRef} key='1' handleSidebar={handleSidebar} />
-      <Navbar handleSidebar={handleSidebar} showFixedNav={showFixedNav} fixed />
+      <Navbar key='1' ref={navRef} handleSidebar={handleSidebar} />
+      <Navbar key='2' handleSidebar={handleSidebar} showFixedNav={showFixedNav} fixed />
       <Sidebar openSidebar={openSidebar} handleSidebar={handleSidebar}/>
       <Switch>
         {

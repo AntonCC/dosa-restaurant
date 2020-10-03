@@ -6,10 +6,10 @@ const Sidebar = ({ openSidebar, handleSidebar }) => {
   return (
     <div className={`sidebar ${openSidebar ? 'active' : ''}`}>
       <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
-        <li><Link to='/menu'>Menu</Link></li>
-        <li><Link to='/location'>Location</Link></li>
+        <li><Link to='/' onClick={handleSidebar}>Home</Link></li>
+        <li><Link to='/about' onClick={handleSidebar}>About</Link></li>
+        <li><Link to='/menu' onClick={handleSidebar}>Menu</Link></li>
+        <li><Link to='/location' onClick={handleSidebar}>Location</Link></li>
       </ul>
       <div className="close" onClick={handleSidebar}>
         X
