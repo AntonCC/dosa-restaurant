@@ -5,6 +5,8 @@ import ScrollTop from './components/scroll-top/scroll-top'
 import AddressBar from './components/address-bar/address-bar'
 import Navbar from './components/navbar/navbar'
 import Sidebar from './components/sidebar/sidebar'
+import ModalContainer from './components/modal-container/modal-container'
+import ModalBackdrop from './components/modal-backdrop/modal-backdrop'
 import Home from './pages/home/home'
 import About from './pages/about/about'
 import Menu from './pages/menu/menu'
@@ -21,6 +23,7 @@ const routes = [
 
 const App = () =>  {
   const [openSidebar, setOpenSidebar] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
   const [showFixedNav, setFixedNav] = useState(false)
   const [hideNav, setHideNav] = useState(false)
   let navRef = useRef(null)
@@ -29,6 +32,7 @@ const App = () =>  {
     setOpenSidebar(!openSidebar)
   }
 
+  // dont forget to debounce this
   const handleScroll = () => {
     let navBottom = navRef.current.getBoundingClientRect().bottom
     if(navBottom < 0) {
@@ -36,6 +40,10 @@ const App = () =>  {
     } else {
       setFixedNav(false)
     }
+  }
+
+  const handleModal = () => {
+    setOpenModal(!openModal)
   }
 
   useEffect(() => {
@@ -48,6 +56,8 @@ const App = () =>  {
 
   return (
     <div className="App">
+      { openModal ? <ModalBackdrop /> : '' }
+      { openModal ? <ModalContainer /> : '' }
       <ScrollTop />
       <AddressBar />
       <Navbar key='1' ref={navRef} handleSidebar={handleSidebar} />
@@ -61,7 +71,7 @@ const App = () =>  {
         }
       </Switch>
       <PreFooter />
-      <Footer />
+      <Footer handleModal={handleModal}/>
     </div>
   );
 }

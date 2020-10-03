@@ -5,7 +5,7 @@ import {ReactComponent as Facebook} from '../../imgs/icons/facebook-square-brand
 import {ReactComponent as Instagram} from '../../imgs/icons/instagram-square-brands.svg'
 import {ReactComponent as Youtube} from '../../imgs/icons/youtube-square-brands.svg'
 
-const Footer = () => {
+const Footer = ({ handleModal }) => {
   return (
     <footer>
       <div className="container">
@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         <div className="side-b">
           <p>Contact</p>
-          <Button btnText='Email Signup' btnClass='white-outline' />
+          <Button btnText='Email Signup' btnClass='white-outline' handleClick={handleModal} />
         </div>
       </div>
     </footer>

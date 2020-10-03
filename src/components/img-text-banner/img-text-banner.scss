@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas: 'left right';
+  background: #fefefe;
   .side-a {
     display: flex;
     flex-direction: column;
