@@ -4,7 +4,6 @@ import './modal-backdrop.scss'
 const ModalBackdrop = () => {
   return (
     <div className='modal-backdrop'>
-      
     </div>
   )
 }

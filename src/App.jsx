@@ -57,7 +57,7 @@ const App = () =>  {
   return (
     <div className="App">
       { openModal ? <ModalBackdrop /> : '' }
-      { openModal ? <ModalContainer /> : '' }
+      { openModal ? <ModalContainer handleModal={handleModal}/> : '' }
       <ScrollTop />
       <AddressBar />
       <Navbar key='1' ref={navRef} handleSidebar={handleSidebar} />
