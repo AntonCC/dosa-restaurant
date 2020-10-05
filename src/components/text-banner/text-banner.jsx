@@ -2,7 +2,7 @@ import React from 'react'
 import './text-banner.scss'
 import Button from '../button/button'
 
-const TextBanner = ({ title, body, btnText, btnClass }) => {
+const TextBanner = ({ title, body, btnText, btnClass, handleModal, modalType }) => {
   return (
     <div className="text-banner">
       <div className="container">
@@ -14,7 +14,7 @@ const TextBanner = ({ title, body, btnText, btnClass }) => {
         </p>
         {
           btnText
-            ? <Button btnText={btnText} btnClass={btnClass}/>
+            ? <Button btnText={btnText} btnClass={btnClass} handleClick={() => handleModal(modalType)}/>
             : ''
         }
       </div>

@@ -18,7 +18,7 @@ const Footer = ({ handleModal }) => {
         </div>
         <div className="side-b">
           <p>Contact</p>
-          <Button btnText='Email Signup' btnClass='white-outline' handleClick={handleModal} />
+          <Button btnText='Email Signup' btnClass='white-outline' handleClick={() => handleModal('EmailSignUp')} />
         </div>
       </div>
     </footer>

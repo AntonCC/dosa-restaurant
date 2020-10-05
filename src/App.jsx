@@ -14,18 +14,11 @@ import Location from './pages/location/location'
 import PreFooter from './components/pre-footer/pre-footer'
 import Footer from './components/footer/footer'
 
-const routes = [
-  {path: '/', name: 'Home', component: Home},
-  {path: '/about', name: 'About', component: About},
-  {path: '/menu', name: ' Menu', component: Menu},
-  {path: '/location', name: 'location', component: Location}
-]
-
 const App = () =>  {
   const [openSidebar, setOpenSidebar] = useState(false)
   const [openModal, setOpenModal] = useState(false)
+  const [modalType, setModalType] = useState(null)
   const [showFixedNav, setFixedNav] = useState(false)
-  const [hideNav, setHideNav] = useState(false)
   let navRef = useRef(null)
 
   const handleSidebar = () => {
@@ -42,8 +35,14 @@ const App = () =>  {
     }
   }
 
-  const handleModal = () => {
-    setOpenModal(!openModal)
+  const handleModal = modalType => {
+    if(!openModal) {
+      setOpenModal(true)
+      setModalType(modalType)
+    } else {
+      setOpenModal(false)
+      setModalType(null)
+    }
   }
 
   useEffect(() => {
@@ -54,10 +53,17 @@ const App = () =>  {
     }
   }, [])
 
+  const routes = [
+    {path: '/', name: 'Home', component: <Home handleModal={handleModal}/>},
+    {path: '/about', name: 'About', component: <About />},
+    {path: '/menu', name: ' Menu', component: <Menu />},
+    {path: '/location', name: 'location', component: <Location />}
+  ]
+  
   return (
-    <div className="App">
+    <div className={`App ${openModal ? 'stop-scroll' : ''}`}>
       { openModal ? <ModalBackdrop /> : '' }
-      { openModal ? <ModalContainer handleModal={handleModal}/> : '' }
+      { openModal ? <ModalContainer modalType={modalType} handleModal={handleModal}/> : '' }
       <ScrollTop />
       <AddressBar />
       <Navbar key='1' ref={navRef} handleSidebar={handleSidebar} />
@@ -66,7 +72,7 @@ const App = () =>  {
       <Switch>
         {
           routes.map(({ path, name, component}) => (
-            <Route key={name} exact path={path} component={component}/>
+            <Route key={name} exact path={path} render={props => component}/>
           ))
         }
       </Switch>

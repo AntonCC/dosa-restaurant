@@ -27,5 +27,6 @@ export const textBannerInfo = {
   title: 'Reservations',
   body: 'We look forward to welcoming you at Lilia. We accept reservations for dinner and also welcome walk-ins at our bar and a portion of the dining room. Reservations can be made through RESY or by calling us at 718-576-3095',
   btnText: 'Reservations',
-  btnClass: 'black-outline'
+  btnClass: 'black-outline',
+  modalType: 'Reservation'
 }

@@ -35,7 +35,7 @@
       label {
         color: #fff;
       }
-      input {
+      input, select {
         height: 45px;
       }
     }
@@ -49,6 +49,8 @@
       font-weight: 700;
       border: 2px solid #fff;
       padding: .5rem 2rem;
+      margin-top: 1rem;
+      cursor: pointer;
     }
   }
 }

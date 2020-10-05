@@ -1,30 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './modal-container.scss'
 import {ReactComponent as X} from '../../imgs/icons/times-solid.svg'
+import EmailSignUp from '../email-signup/email-signup'
+import Reservation from '../reservation/reservation'
 
-const ModalContainer = ({ handleModal }) => {
-
-
+const ModalContainer = ({ handleModal, modalType }) => {
   return (
     <div className='modal-container'>
       <div className="close" onClick={handleModal}>
         <X />
       </div>
-      <form>
-        <div className="input-group">
-          <label>First Name</label>
-          <input type="text" placeholder='First Name' required/>
-        </div>
-        <div className="input-group">
-          <label>Last Name</label>
-          <input type="text" placeholder='Last Name' required/>
-        </div>
-        <div className="input-group">
-          <label>Email</label>
-          <input type="email" placeholder='Email' required/>
-        </div>
-        <button className='submit-btn' type='submit'>Submit</button>
-      </form>
+      {modalType === 'EmailSignUp' ? <EmailSignUp handleModal={handleModal} /> : ''}
+      {modalType === 'Reservation' ? <Reservation handleModal={handleModal} /> : ''}
     </div>
   )
 }

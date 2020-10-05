@@ -6,7 +6,7 @@ import ImgTextBanner from '../../components/img-text-banner/img-text-banner'
 import TextBanner from '../../components/text-banner/text-banner'
 import Car1 from '../../imgs/car1.jpg'
 
-const Home = () => {
+const Home = ({ handleModal }) => {
   return (
     <div className="home">
       <Landing bgImage={Car1}/>
@@ -15,7 +15,7 @@ const Home = () => {
           <ImgTextBanner {...info} />
         ))
       }
-      <TextBanner {...textBannerInfo}/>
+      <TextBanner handleModal={handleModal} {...textBannerInfo}/>
     </div>
   )
 }
