@@ -35,6 +35,14 @@ export const dinnerItemsInfo = [
       'Black Bass, Salsa Verde, Coal Roasted Yukon Gold Potatoes',
     ]
   },
+  {
+    title: 'Carne',
+    subTitle: 'MEAT',
+    items: [
+      'Grilled Lamb Leg Steak, Roman Spices, Fennel, Celery',
+      'Grilled Veal Flank Steak, Hot Peppers, Basil'
+    ]
+  }
 ]
 
 export const drinkItemsInfo = [

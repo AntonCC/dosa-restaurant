@@ -4,7 +4,7 @@ import Giardino from '../../imgs/giardino.jpg'
 
 export const textBannerInfo = {
   title: 'Our Story',
-  body: 'Lilia brings the best of Italy to Williamsburg where wood-fired seafood, hand crafted pastas, classic Italian cocktails and warm hospitality come together to create a casual dining experience. '
+  body: 'Dosa brings the best of Italy to Brooklyn where wood-fired seafood, hand crafted pastas, classic Italian cocktails and warm hospitality come together to create a fine dining experience. '
 }
 
 export const imgBannerInfo = [
@@ -14,6 +14,7 @@ export const imgBannerInfo = [
     img : Pasta,
     btnText: 'View Menu',
     btnClass: 'white-outline',
+    btnLink: '/menu',
     bgColor: '#757679'
   },
   {
@@ -22,6 +23,7 @@ export const imgBannerInfo = [
     img : Pesce,
     btnText: 'View Menu',
     btnClass: 'white-outline',
+    btnLink: '/menu',
     bgColor: '#727b4e',
     switchSide: true
   },
@@ -31,6 +33,7 @@ export const imgBannerInfo = [
     img : Giardino,
     btnText: 'View Menu',
     btnClass: 'white-outline',
+    btnLink: '/menu',
     bgColor: '#353536'
   },
 ]

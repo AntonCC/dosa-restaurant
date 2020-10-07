@@ -11,12 +11,12 @@ const EmailSignUp = ({ handleModal }) => {
   const handleChange = e => {
     const { name, value } = e.target
     setFormDetails({...formDetails, [name]: value})
-    console.log('Name: ', name, 'Value: ', value)
   }
 
   const handleSubmit = e => {
     e.preventDefault()
     handleModal()
+    alert('Successfully signed up for email newsletter!')
   }
 
   return (

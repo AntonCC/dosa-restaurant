@@ -12,7 +12,7 @@ const Home = ({ handleModal }) => {
       <Landing bgImage={Car1}/>
       {
         imgBannerInfo.map(info => (
-          <ImgTextBanner {...info} />
+          <ImgTextBanner key={info.title} {...info} />
         ))
       }
       <TextBanner handleModal={handleModal} {...textBannerInfo}/>

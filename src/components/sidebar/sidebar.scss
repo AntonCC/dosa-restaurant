@@ -13,7 +13,7 @@
   z-index: 10;
   transform: translateX(100%);
   transition: 400ms transform ease-in;
-  &.active {
+  &.sidebar-active {
     transform: translateX(0%);
   }
   ul {
@@ -21,8 +21,14 @@
       a {
         color: #fff;
         font-size: 1.25rem;
-        &:hover {
-          color: #d4af37;
+        &:not(.active) {
+          &:hover {
+            color: #d4af37;
+          }
+        }
+        &.active {
+          text-decoration: underline;
+          font-weight: 700;
         }
       }
       &:not(:last-child) {

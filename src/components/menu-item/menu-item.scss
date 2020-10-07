@@ -1,5 +1,5 @@
 .menu-item {
-  max-width: 800px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-column-gap: 1rem;
@@ -23,7 +23,7 @@
         opacity: .9;
         letter-spacing: .25px;
         &:not(:last-child) {
-          margin-bottom: .75rem;
+          margin-bottom: 2rem;
         }
       }
     }

@@ -12,10 +12,6 @@ const Menu = () => {
     setActiveMenu(menu)
   }
 
-  useEffect(() => {
-    console.log(activeMenu)
-  })
-
   let renderMenu
   if(activeMenu === 'Dinner') {
     renderMenu = <MenuItems menuItemsInfo={dinnerItemsInfo}/>

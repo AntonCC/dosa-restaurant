@@ -1,6 +1,6 @@
 import React from 'react'
 import './navbar.scss'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Navbar = ({ handleSidebar, showFixedNav, fixed }, ref) => {
 
@@ -12,10 +12,10 @@ const Navbar = ({ handleSidebar, showFixedNav, fixed }, ref) => {
           <div className="logo">Dosa</div>
         </Link>
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/about'>About</Link></li>
-          <li><Link to='/menu'>Menu</Link></li>
-          <li><Link to='/location'>Location</Link></li>
+          <li><NavLink tag={NavLink} activeClassName="active" exact to='/'>Home</NavLink></li>
+          <li><NavLink tag={NavLink} activeClassName="active" to='/about'>About</NavLink></li>
+          <li><NavLink tag={NavLink} activeClassName="active" to='/menu'>Menu</NavLink></li>
+          <li><NavLink tag={NavLink} activeClassName="active" to='/location'>Location</NavLink></li>
         </ul>
         <div className="hamburger" onClick={handleSidebar}>
           <div className="line"></div>
