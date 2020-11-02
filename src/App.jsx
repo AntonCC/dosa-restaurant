@@ -14,6 +14,19 @@ import Location from './pages/location/location'
 import PreFooter from './components/pre-footer/pre-footer'
 import Footer from './components/footer/footer'
 
+const throttle = (func, limit) => {
+  let inThrottle
+  return function() {
+    const args = arguments
+    const context = this
+    if (!inThrottle) {
+      func.apply(context, args)
+      inThrottle = true
+      setTimeout(() => inThrottle = false, limit)
+    }
+  }
+}
+
 const App = () =>  {
   const [openSidebar, setOpenSidebar] = useState(false)
   const [openModal, setOpenModal] = useState(false)
@@ -25,7 +38,6 @@ const App = () =>  {
     setOpenSidebar(!openSidebar)
   }
 
-  // dont forget to debounce this
   const handleScroll = () => {
     let navBottom = navRef.current.getBoundingClientRect().bottom
     if(navBottom < 0) {
@@ -45,11 +57,13 @@ const App = () =>  {
     }
   }
 
+  const throttledScroll = throttle(handleScroll, 40)
+
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', throttledScroll)
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', throttledScroll)
     }
   }, [])
 
