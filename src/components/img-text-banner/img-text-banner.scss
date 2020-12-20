@@ -11,9 +11,10 @@
     justify-content: center;
     align-items: center;
     grid-area: left;
-    padding: 1rem;
+    padding: 2.5rem;
     h2 {
       font-family: Tangerine;
+      font-weight: 400;
       font-size: 3rem;
       color: #fff;
       margin-bottom: 2rem;
@@ -52,7 +53,7 @@
   }
 }
 
-@media only screen and (max-width: 825px) {
+@media only screen and (max-width: 925px) {
   .img-text-banner, .img-text-banner.switch-side {
     height: auto;
     grid-template-columns: 1fr;

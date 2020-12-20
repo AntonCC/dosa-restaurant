@@ -5,6 +5,7 @@
   transform: translate3d(-50%, -50%, 0);
   width: 100%;
   max-width: 650px;
+  min-width: 370px;
   height: 50%;
   min-height: 400px;
   z-index: 50;
@@ -15,7 +16,7 @@
   .close {
     position: absolute;
     top: 0;
-    right: 0;
+    right: .5rem;
     cursor: pointer;
     svg {
       height: 40px;
@@ -38,6 +39,7 @@
       }
       input, select {
         height: 45px;
+        padding: 0 .5rem;
       }
     }
     .submit-btn {
