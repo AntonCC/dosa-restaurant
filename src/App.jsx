@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.scss';
 import { Switch, Route } from 'react-router-dom'
+import debounce from './helperFuncs/debounce'
+
 import ScrollTop from './components/scroll-top/scroll-top'
 import AddressBar from './components/address-bar/address-bar'
 import Navbar from './components/navbar/navbar'
@@ -14,18 +16,6 @@ import Location from './pages/location/location'
 import PreFooter from './components/pre-footer/pre-footer'
 import Footer from './components/footer/footer'
 
-const throttle = (func, limit) => {
-  let inThrottle
-  return function() {
-    const args = arguments
-    const context = this
-    if (!inThrottle) {
-      func.apply(context, args)
-      inThrottle = true
-      setTimeout(() => inThrottle = false, limit)
-    }
-  }
-}
 
 const App = () =>  {
   const [openSidebar, setOpenSidebar] = useState(false)
@@ -57,13 +47,13 @@ const App = () =>  {
     }
   }
 
-  const throttledScroll = throttle(handleScroll, 40)
+  const debouncedScroll = debounce(handleScroll, 25)
 
   useEffect(() => {
-    window.addEventListener('scroll', throttledScroll)
+    window.addEventListener('scroll', debouncedScroll)
 
     return () => {
-      window.removeEventListener('scroll', throttledScroll)
+      window.removeEventListener('scroll', debouncedScroll)
     }
   }, [])
 
