@@ -47,7 +47,7 @@ const App = () =>  {
     }
   }
 
-  const debouncedScroll = debounce(handleScroll, 25)
+  const debouncedScroll = debounce(handleScroll, 10)
 
   useEffect(() => {
     window.addEventListener('scroll', debouncedScroll)
