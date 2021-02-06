@@ -40,7 +40,7 @@ const Reservation = ({ handleModal }) => {
           <option value="2">2 People</option>
           <option value="3">3 People</option>
           <option value="4">4 People</option>
-          <option value=">4">4+ People</option>
+          <option value="5+">5+ People</option>
         </select>
       </div>
       <div className="input-group">
